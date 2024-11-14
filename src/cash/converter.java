@@ -1,6 +1,9 @@
 package cash;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+
 
 public class converter {
     public static Scanner scanner = new Scanner(System.in);
@@ -19,17 +22,16 @@ public class converter {
 
 
     public static String welcomeMessage(){
-        String choice = "" ;
-
-        System.out.println("Welcome to the currency converter.");
-        System.out.println("Please type USD to convert from GBP to USD | Or press GBP to convert from USD to GBP:");
-        choice = scanner.next();
+        String choice = JOptionPane.showInputDialog(
+                "<html>Welcome to the currency converter.<br>" +
+                        "Please type 'USD' to convert from GBP to USD or type 'GBP' to convert from USD to GBP:</html>"
+        );
 
         while(true) {
             if (choice.equals("USD") || choice.equals("GBP")) {
                 break;
             } else {
-                System.out.println("Invalid input. Please enter either USD or GBP.");
+                choice = JOptionPane.showInputDialog("<html>Invalid input.<br>"+ "Please type 'USD' to convert from GBP to USD or type 'GBP' to convert from USD to GBP</html>");
             }
         }
         return choice;
