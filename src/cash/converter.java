@@ -38,17 +38,14 @@ public class converter {
     }
 
     private static void GBP() {
-        String amountString = JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:");
-        double amount = Integer.parseInt(amountString);
-        double pounds = amount / 1.28;
+        double poundamount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:"));
+        double pounds =  1.28 / poundamount ;
         System.out.println(pounds);
     }
 
     private static void USD() {
-        String amountString = JOptionPane.showInputDialog("Enter the amount of GBP you want to convert to USD:");
-        int amount = Integer.parseInt(amountString);
-        double dollars;
-        dollars = amount * 1.28;
+        double dolaramount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:"));
+        double dollars = 1.28 * dolaramount;
         System.out.println(dollars);
     }
 
