@@ -28,7 +28,7 @@ public class converter {
         );
 
         while(true) {
-            if (choice.equals("USD") || choice.equals("GBP")) {
+            if (choice.equals("USD") || choice.equals("GBP") || choice.equals("usd") || choice.equals("gbp")) {
                 break;
             } else {
                 choice = JOptionPane.showInputDialog("<html>Invalid input.<br>"+ "Please type 'USD' to convert from GBP to USD or type 'GBP' to convert from USD to GBP</html>");
@@ -38,11 +38,18 @@ public class converter {
     }
 
     private static void GBP() {
-        System.out.println("1");
+        String amountString = JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:");
+        double amount = Integer.parseInt(amountString);
+        double pounds = amount / 1.28;
+        System.out.println(pounds);
     }
 
     private static void USD() {
-        System.out.println("2");
+        String amountString = JOptionPane.showInputDialog("Enter the amount of GBP you want to convert to USD:");
+        int amount = Integer.parseInt(amountString);
+        double dollars;
+        dollars = amount * 1.28;
+        System.out.println(dollars);
     }
 
 
