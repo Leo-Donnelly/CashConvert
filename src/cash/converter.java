@@ -12,8 +12,10 @@ public class converter {
         String choice = welcomeMessage();
 
         if(choice.equals("GBP") || choice.equals("gbp")){
+            choice = "";
             GBP();
         }else{
+            choice = "";
             USD();
         }
 
@@ -40,13 +42,27 @@ public class converter {
         double dollarAmount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:"));
         double pounds = dollarAmount / 1.28;
         JOptionPane.showMessageDialog(null, dollarAmount + " USD = " + String.format("%.2f", pounds) + " GBP");
+        redo();
+
     }
 
     private static void USD() {
         double poundAmount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of GBP you want to convert to USD:"));
         double dollars = poundAmount * 1.28;
         JOptionPane.showMessageDialog(null, poundAmount + " GBP = " + String.format("%.2f", dollars) + " USD");
+        redo();
     }
 
+    private static void redo(){
+            int choice = JOptionPane.showConfirmDialog(null, "Would you like to run again?",
+                    "Confirmation", JOptionPane.YES_NO_OPTION);
 
+            // Check the user's choice and display a corresponding message
+            if (choice == JOptionPane.YES_OPTION) {
+                // If the user chose 'Yes', show a message indicating that changes are saved
+                main(null);
+            }else if (choice == JOptionPane.NO_OPTION){
+                JOptionPane.showMessageDialog(null,"Thank you for using the currency converter program.");
+        }
+    }
 }
