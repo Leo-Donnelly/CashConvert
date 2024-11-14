@@ -1,9 +1,6 @@
 package cash;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
-
-
 
 public class converter {
 
@@ -12,10 +9,8 @@ public class converter {
         String choice = welcomeMessage();
 
         if(choice.equals("GBP") || choice.equals("gbp")){
-            choice = "";
             GBP();
         }else{
-            choice = "";
             USD();
         }
 
