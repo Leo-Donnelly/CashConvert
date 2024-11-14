@@ -6,13 +6,12 @@ import javax.swing.JOptionPane;
 
 
 public class converter {
-    public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
 
         String choice = welcomeMessage();
 
-        if(choice.equals("GBP")){
+        if(choice.equals("GBP") || choice.equals("gbp")){
             GBP();
         }else{
             USD();
@@ -38,15 +37,15 @@ public class converter {
     }
 
     private static void GBP() {
-        double poundamount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:"));
-        double pounds =  1.28 / poundamount ;
-        System.out.println(pounds);
+        double dollarAmount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:"));
+        double pounds = dollarAmount / 1.28;
+        JOptionPane.showMessageDialog(null, dollarAmount + " USD = " + String.format("%.2f", pounds) + " GBP");
     }
 
     private static void USD() {
-        double dolaramount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of USD you want to convert to GBP:"));
-        double dollars = 1.28 * dolaramount;
-        System.out.println(dollars);
+        double poundAmount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of GBP you want to convert to USD:"));
+        double dollars = poundAmount * 1.28;
+        JOptionPane.showMessageDialog(null, poundAmount + " GBP = " + String.format("%.2f", dollars) + " USD");
     }
 
 
